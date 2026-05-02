@@ -1,0 +1,63 @@
+let humanScore = 0;
+        let computerScore = 0;
+
+
+
+        for (let i = 1; i <= 5; i++) {
+            let humanChoice = prompt("Enter your Choice Rock , Paper or Scissor");
+            /*  console.log(humanChoice); */
+
+            let computerChoice;
+
+            let randomValue = Math.floor(Math.random() * 3) + 1;
+            /*   console.log(randomValue); */
+
+            if (randomValue === 1) {
+                computerChoice = "rock";
+
+            } else if (randomValue === 2) {
+                computerChoice = "paper";
+
+            } else if (randomValue === 3) {
+                computerChoice = "scissor";
+            }
+
+            /*  console.log(computerChoice); */
+
+            function playRound(humanChoice, computerChoice) {
+
+                if (humanChoice.toLowerCase() === computerChoice) {
+                    return "It's a Tie";
+                } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissor"
+                    || humanChoice.toLowerCase() === "paper" && computerChoice === "rock"
+                    || humanChoice.toLowerCase() === "scissor" && computerChoice === "paper"
+                ) {
+                    humanScore++;
+                    return "You Win";
+                } else if (humanChoice.toLowerCase() === "scissor" && computerChoice === "rock"
+                    || humanChoice.toLowerCase() === "rock" && computerChoice === "paper"
+                    || humanChoice.toLowerCase() === "paper" && computerChoice === "scissor"
+                ) {
+                    computerScore++;
+                    return "You Lose";
+                } else {
+                    return "Invalid input!";
+                }
+            }
+            let result = playRound(humanChoice, computerChoice);
+
+            console.log("You Picked:" + humanChoice);
+            console.log("Computer Picked:" + computerChoice);
+            console.log("Result:" + result);
+            console.log("Current Score -> You: " + humanScore + " | Computer Score :" + computerScore);
+
+        }
+        console.log("=== GAME OVER ===");
+        if (humanScore > computerScore) {
+            console.log("CONGRATULATIONS! You won the game!");
+        } else if (computerScore > humanScore) {
+            console.log("BUMMER! The computer won the game.");
+        } else {
+            console.log("It's a dead tie!");
+        }
+
