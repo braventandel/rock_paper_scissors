@@ -11,7 +11,7 @@
     <script>
 
         let humanChoice = prompt("Enter your Choice Rock , Paper or Scissor");
-        console.log(humanChoice);
+        /*  console.log(humanChoice); */
 
         let computerChoice;
 
@@ -19,7 +19,7 @@
             computerScore;
 
         let randomValue = Math.floor(Math.random() * 3) + 1;
-        console.log(randomValue);
+        /*   console.log(randomValue); */
 
         if (randomValue === 1) {
             computerChoice = "rock";
@@ -31,20 +31,20 @@
             computerChoice = "scissor";
         }
 
-        console.log(computerChoice);
+        /*  console.log(computerChoice); */
 
         function playRound(humanChoice, computerChoice) {
 
-            if (humanChoice === computerChoice) {
+            if (humanChoice.toLowerCase() === computerChoice) {
                 return "It's a Tie";
-            } else if (humanChoice === "rock" && computerChoice === "scissor"
-                || humanChoice === "paper" && computerChoice === "rock"
-                || humanChoice === "scissor" && computerChoice === "paper"
+            } else if (humanChoice.toLowerCase() === "rock" && computerChoice === "scissor"
+                || humanChoice.toLowerCase() === "paper" && computerChoice === "rock"
+                || humanChoice.toLowerCase() === "scissor" && computerChoice === "paper"
             ) {
                 return "You Win";
-            } else if (humanChoice === "scissor" && computerChoice === "rock"
-                || humanChoice === "rock" && computerChoice === "paper"
-                || humanChoice === "paper" && computerChoice === "scissor"
+            } else if (humanChoice.toLowerCase() === "scissor" && computerChoice === "rock"
+                || humanChoice.toLowerCase() === "rock" && computerChoice === "paper"
+                || humanChoice.toLowerCase() === "paper" && computerChoice === "scissor"
             ) {
                 return "You Lose";
             }
