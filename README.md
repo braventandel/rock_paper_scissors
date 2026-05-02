@@ -7,3 +7,4 @@ Compare Values and decide winner
 prompt text for win/loss
 Increment the score of the winner
 repeat for more rounds
+track score
