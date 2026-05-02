@@ -15,20 +15,47 @@
 
         let computerChoice;
 
+        let humanScore,
+            computerScore;
+
         let randomValue = Math.floor(Math.random() * 3) + 1;
         console.log(randomValue);
 
         if (randomValue === 1) {
-            computerChoice = "Rock";
+            computerChoice = "rock";
 
         } else if (randomValue === 2) {
-            computerChoice = "Paper";
+            computerChoice = "paper";
 
         } else if (randomValue === 3) {
-            computerChoice = "Scissor";
+            computerChoice = "scissor";
         }
 
         console.log(computerChoice);
+
+        function playRound(humanChoice, computerChoice) {
+
+            if (humanChoice === computerChoice) {
+                return "It's a Tie";
+            } else if (humanChoice === "rock" && computerChoice === "scissor"
+                || humanChoice === "paper" && computerChoice === "rock"
+                || humanChoice === "scissor" && computerChoice === "paper"
+            ) {
+                return "You Win";
+            } else if (humanChoice === "scissor" && computerChoice === "rock"
+                || humanChoice === "rock" && computerChoice === "paper"
+                || humanChoice === "paper" && computerChoice === "scissor"
+            ) {
+                return "You Lose";
+            }
+        }
+
+        let result = playRound(humanChoice, computerChoice);
+
+        console.log("You Picked:" + humanChoice);
+        console.log("Computer Picked:" + computerChoice);
+        console.log("Result:" + result);
+
     </script>
 </body>
 
